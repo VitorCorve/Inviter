@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="ServerUIApplication.View.MainControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ServerUIApplication.View"
+             xmlns:vm="clr-namespace:ServerUIApplication.ViewModel"
+             xmlns:internal="clr-namespace:ServerUIApplication.Internal"
+             mc:Ignorable="d" 
+             d:DesignHeight="900" d:DesignWidth="1600">
+    <UserControl.DataContext>
+        <vm:MainControlViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF151515" Offset="1"/>
+                <GradientStop Color="#FF0E0E0E"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="10">
+                <Button Content="Run" Height="40" Background="Black" Foreground="White" Command="{Binding Run}"/>
+                <Button Content="Stop" Height="40" Background="Black" Foreground="White" Command="{Binding Stop}"/>
+                <Button Content="Exit" Height="40" Background="Black" Foreground="White"/>
+                <Button Content="Disconnect" Height="40" Background="Black" Foreground="White"/>
+            </StackPanel>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <ListBox ItemsSource="{Binding Logs}" Background="Transparent" 
+                         internal:ListBoxBehavior.ScrollOnNewItem="True"
+                         ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Foreground="White"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <ListBox ItemsSource="{Binding Users}" Background="Transparent" Grid.Row="1" 
+                         ScrollViewer.VerticalScrollBarVisibility="Hidden" 
+                         internal:ListBoxBehavior.ScrollOnNewItem="True">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Client.RemoteEndPoint, StringFormat=Remote: {0}}" Foreground="White" Margin="10,0,0,0"/>
+                                <TextBlock Text="{Binding User.Id, StringFormat=ID: {0}}" Foreground="White" Margin="10,0,0,0"/>
+                                <TextBlock Text="{Binding User.Login, StringFormat=Login: {0}}" Foreground="White" Margin="10,0,0,0"/>
+                                <TextBlock Text="{Binding User.Nickname, StringFormat=Nickname: {0}}" Foreground="White" Margin="10,0,0,0"/>
+                                <TextBlock Text="{Binding User.Status, StringFormat=Status: {0}}" Foreground="White" Margin="10,0,0,0"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

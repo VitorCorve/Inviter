@@ -1,0 +1,16 @@
+E:\Vs Projects\Messenger2\ClientServerComponents\obj\Debug\net5.0\ClientServerComponents.csproj.AssemblyReference.cache
+E:\Vs Projects\Messenger2\ClientServerComponents\obj\Debug\net5.0\ClientServerComponents.GeneratedMSBuildEditorConfig.editorconfig
+E:\Vs Projects\Messenger2\ClientServerComponents\obj\Debug\net5.0\ClientServerComponents.AssemblyInfoInputs.cache
+E:\Vs Projects\Messenger2\ClientServerComponents\obj\Debug\net5.0\ClientServerComponents.AssemblyInfo.cs
+E:\Vs Projects\Messenger2\ClientServerComponents\obj\Debug\net5.0\ClientServerComponents.csproj.CoreCompileInputs.cache
+E:\Vs Projects\Messenger2\ClientServerComponents\bin\Debug\net5.0\ClientServerComponents.deps.json
+E:\Vs Projects\Messenger2\ClientServerComponents\bin\Debug\net5.0\ClientServerComponents.dll
+E:\Vs Projects\Messenger2\ClientServerComponents\bin\Debug\net5.0\ref\ClientServerComponents.dll
+E:\Vs Projects\Messenger2\ClientServerComponents\bin\Debug\net5.0\ClientServerComponents.pdb
+E:\Vs Projects\Messenger2\ClientServerComponents\obj\Debug\net5.0\ClientServerComponents.dll
+E:\Vs Projects\Messenger2\ClientServerComponents\obj\Debug\net5.0\ref\ClientServerComponents.dll
+E:\Vs Projects\Messenger2\ClientServerComponents\obj\Debug\net5.0\ClientServerComponents.pdb
+E:\Vs Projects\Messenger2\ClientServerComponents\bin\Debug\net5.0\ClientServerComponents.runtimeconfig.json
+E:\Vs Projects\Messenger2\ClientServerComponents\bin\Debug\net5.0\ClientServerComponents.runtimeconfig.dev.json
+E:\Vs Projects\Messenger2\ClientServerComponents\obj\Debug\net5.0\ClientServerComponents.genruntimeconfig.cache
+E:\Vs Projects\Messenger2\ClientServerComponents\bin\Debug\net5.0\ClientComponent.cs
