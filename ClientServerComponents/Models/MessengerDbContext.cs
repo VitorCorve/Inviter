@@ -16,6 +16,7 @@ namespace ClientServerComponents.Models
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Messages> Messages { get; set; }
         public virtual DbSet<Logs> Logs { get; set; }
+        public virtual DbSet<Contacts> Contacts { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             /*            modelBuilder.Entity<Message>(entity =>
@@ -33,8 +34,7 @@ namespace ClientServerComponents.Models
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connection = ConfigurationManager.ConnectionStrings["MessengerConnectionString"].ConnectionString;
-            optionsBuilder.UseSqlServer(connection);
+            optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["MessengerConnectionString"].ConnectionString);
         }
     }
 }

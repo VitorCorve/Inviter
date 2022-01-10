@@ -23,6 +23,7 @@ namespace ClientServerComponents
         private Socket Listener;
         private List<StateObject> Clients = new List<StateObject>();
         private bool Disposed;
+        private bool Running;
 
         public ServerComponent()
         {
@@ -34,12 +35,18 @@ namespace ClientServerComponents
         private void LogMessageOut(string message) => Log?.Invoke(message);
         public async void Start()
         {
+            if (Running)
+            {
+                Log?.Invoke($"Server already running");
+                return;
+            }
             await Task.Run(() =>
             {
                 try
                 {
                     Listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                     Disposed = false;
+                    Running = true;
                     Listener.Bind(new IPEndPoint(IP, Port));
                     Listener.Listen();
                     Log?.Invoke($"Starting to listen at {IP}:{Port}");
@@ -144,7 +151,8 @@ namespace ClientServerComponents
                 exListener.Close();
             }
             Disposed = true;
-            UsersManager.UsersOnline.FirstOrDefault().Client.Shutdown(SocketShutdown.Both);
+            Running = false;
+            Log?.Invoke($"Server stoped");
         }
         public void Dispose()
         {
